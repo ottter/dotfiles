@@ -4,7 +4,7 @@ my dotfile repo
 # Install guide
 ```
 $   cd ~
-$   git clone https://github.com/ottter/dotfiles.git && cd "$(basename '$_' .git)"
+$   git clone https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
 $   ./install.sh
 ```
 
@@ -12,7 +12,7 @@ $   ./install.sh
 Re-install incase of catastrophic mistakes
 ```
 $   cd ~
-$   git clone --branch default https://github.com/ottter/dotfiles.git && cd "$(basename '$_' .git)"
+$   git clone -b v1.0.0 https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
 $   ./install.sh
 ```
 
