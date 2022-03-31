@@ -1,4 +1,8 @@
-# .bashrc
+#!/bin/bash
+
+for DOTFILE in $(find .dotfiles/ -type f -name ".*" ); do
+    [ -f "$DOTFILE" ] && source $DOTFILE
+done
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -25,4 +29,4 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-unset rc
+unset rc DOTFILE

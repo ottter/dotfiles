@@ -12,7 +12,7 @@ $   ./install.sh
 Re-install incase of catastrophic mistakes
 ```
 $   cd ~
-$   git clone -b v1.0.0 https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
+$   git clone -b v1.0.1 https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
 $   ./install.sh
 ```
 
