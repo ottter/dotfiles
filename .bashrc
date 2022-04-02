@@ -1,12 +1,12 @@
 #!/bin/bash
 
-for DOTFILE in $(find .dotfiles/ -type f -name ".*" ); do
+for DOTFILE in $(find ~/.dotfiles/ -type f -name ".*" ); do
     [ -f "$DOTFILE" ] && source $DOTFILE
 done
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+	source /etc/bashrc
 fi
 
 # User specific environment

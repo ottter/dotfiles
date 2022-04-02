@@ -1,0 +1,31 @@
+# Shell-agnostic configs
+
+# Prepend directory to PATH.
+# Skipped if directory does not exist.
+# Argument should be /absolute/path or ~/user/path.
+prepend_path() {
+  if [ -d "$1" ]; then
+    export PATH="$1:$PATH"
+  fi
+}
+
+# Ignore the check on terminal setup - always add.
+# This works well for paths that are relative to the current directory.
+prepend_path_always() {
+  export PATH="$1:$PATH"
+}
+
+
+# Make ~/bin scripts of this repo available from anywhere.
+prepend_path $HOME/bin
+
+
+# PYTHON
+#
+# Prevent accidental global installs with pip.
+export PIP_REQUIRE_VIRTUALENV=true
+
+# Clean-up
+unset -f prepend_path prepend_path_always
+
+# inspo: https://github.com/MichaelCurrin/dotfiles/
