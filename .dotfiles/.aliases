@@ -6,3 +6,9 @@ alias ld="ls -ld */"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+# Override the setting that disables virtualenv requirement
+# Generally used for packages intended for global install
+alias pip-user='PIP_REQUIRE_VIRTUALENV=false python3 -m pip'
+
+alias yum-i='sudo yum install'

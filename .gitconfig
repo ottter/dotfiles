@@ -1,0 +1,41 @@
+[alias]
+    st = "status -s -b"
+    c = "commit"
+
+    br = "branch -a -v"
+
+    co = "checkout"
+    cb = "checkout -b"
+
+    # Short hash, relative date and message.
+    logd = "log --pretty='%C(yellow)%h %C(cyan)%ar %Creset%s'"
+
+    # --graph:
+    #     Draw a text-based graphical representation of the commit history on
+    #     the left hand side of the output.
+    # --decorate:
+    #     Print out the ref names of any commits that are shown. Defaults to
+    #     short optionm such that the name prefixes refs/heads/, refs/tags/ and
+    #     refs/remotes/ will not be printed.
+    lol = "log --graph --decorate --oneline"
+
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+    showbranch = auto
+	ui = true
+
+[core]
+    excludesfile = "~/.gitignore"
+
+[log]
+    date = short
+    # date = relative
+
+[push]
+	default = simple
+
+[user]
+    email = 29265756+ottter@users.noreply.github.com
+    name = james
