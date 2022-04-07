@@ -1,5 +1,0 @@
-# Meant for tokens and such, this is just a template and will be added to .gitignore in future
-# List all environment variables: printenv
-
-DISCORD_TOKEN_EXAMPLE=1234321
-MONGO_TOKEN_EXAMPLE=1234321
