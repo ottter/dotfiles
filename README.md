@@ -1,5 +1,5 @@
 # dotfiles
-my dotfile repo
+My dotfile repo. I'm not really sure why anyone would want to straight up install this, but it's relatively unobtrusive for standard, uncustomized installs. Of course it will overwrite what you already have so be careful. 
 
 # Install guide
 ```
@@ -24,10 +24,8 @@ $   git clone -b v1.0.1 https://github.com/ottter/dotfiles.git && cd "$(basename
 $   ./install.sh
 ```
 
-# Information
+# Sources
+More or less people I stole ideas from. Thanks xo
 
-## .bash_profile
-.bash_profile is read and executed on interactive login shells. Should contain contents meant to be ran once.
-## .bashrc
-.bashrc is read and executed on non-login shells.
-## .inputrc
+* https://github.com/webpro/dotfiles
+* https://github.com/victoriadrake/dotfiles/tree/master
