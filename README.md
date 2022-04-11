@@ -1,6 +1,12 @@
 # dotfiles
 My dotfile repo. I'm not really sure why anyone would want to straight up install this, but it's relatively unobtrusive for standard, uncustomized installs. Of course it will overwrite what you already have so be careful. 
 
+Install script will do the following:
+- Copy all files in to place within $HOME, mostly to newly created ~/.dotfiles
+- Create aliases for general Linux, Python, and more
+- Install basic packages and ones useful to me (Ansible & Hugo)
+- Apply custom git config
+
 # Install guide
 ```
 $   cd $HOME
@@ -9,11 +15,11 @@ $   ./install.sh
 ```
 
 # Generate secrets dotfile
-I wanted to keep all secrets in a separate dotfile and I obviously don't want to put that on GitHub. This can be done after running `install.sh`:
+I wanted to keep all secrets in a separate dotfile and I obviously don't want to put that on GitHub. This can be done before or after running `install.sh` without it being lost. This is because `install.sh` copys over files from the repo, overwriting existing and `.bashrc` runs all files in `$HOME/.dotfiles`.
 ```
 $   touch $HOME/.dotfiles/.secrets
 $   echo "EXAMPLE_TOKEN=1234321" >> $HOME/.dotfiles/.secrets
-$   source $HOME/.dotfiles/.secrets
+$   source $HOME/.bashrc
 ```
 
 # Revert to (mostly) a default configuration

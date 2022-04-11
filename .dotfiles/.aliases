@@ -7,8 +7,17 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+alias pip='pip3'
+alias mkenv='python3 -m venv .venv'
+alias startenv='source .venv/bin/activate && which python3'
+alias stopenv='deactivate'
+
 # Override the setting that disables virtualenv requirement
 # Generally used for packages intended for global install
 alias pip-user='PIP_REQUIRE_VIRTUALENV=false python3 -m pip'
 
-alias yum-i='sudo yum install'
+# Show contents of dir after action
+function cd () {
+    builtin cd "$1"
+    ls -ACF
+}
