@@ -11,31 +11,25 @@ Install script will do the following:
 
 ## Install guide
 
-```bash
     cd $HOME
     git clone https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
     ./install.sh
-```
 
 ## Generate secrets dotfile
 
 I wanted to keep all secrets in a separate dotfile and I obviously don't want to put that on GitHub. This can be done before or after running `install.sh` without it being lost. This is because `install.sh` copys over files from the repo, overwriting existing and `.bashrc` runs all files in `$HOME/.dotfiles`.
 
-```bash
     touch $HOME/.dotfiles/.secrets
     echo "EXAMPLE_TOKEN=1234321" >> $HOME/.dotfiles/.secrets
     source $HOME/.bashrc
-```
 
 ## Revert to (mostly) a default configuration
 
 Re-install incase of catastrophic mistakes
 
-```bash
     cd ~
     git clone -b v1.0.1 https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
     ./install.sh
-```
 
 ## Sources
 
