@@ -1,14 +1,31 @@
 #!/usr/bin/bash
 
-for FILE in $(find . -type f -name ".*" ! -path ".git/*" ); do
-        rsync -aR --checksum $FILE ~ && source $FILE 2> /dev/null
-        echo "Placing dotfile: ${FILE:2}"
-done
+DOTFILE_ARGS=$(getopt -o ab --long ansible,bash -- "$@")
 
-unset FILE
-
-
-# Run-once common package installer script
-if [ -f ./.dotfiles/apps.sh ]; then
-	echo -e "\n" && sh ./.dotfiles/apps.sh
+if [ $# -eq 0 ]; then
+  ./install.sh --bash
+  exit 0
 fi
+
+eval set -- "$DOTFILE_ARGS"
+
+while [ : ]; do
+  case "$1" in
+    -a | --ansible)
+      echo "ansible"
+      exit 0
+      ;;
+    -b | --bash)
+      ./.dotfiles/installer/bash-install.sh
+      exit 0
+      ;;
+    --)
+      shift;
+      break
+      ;;
+    ?)
+      echo "other"
+      exit 1
+      ;;
+  esac
+done
