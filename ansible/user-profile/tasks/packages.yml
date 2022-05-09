@@ -11,7 +11,6 @@
   - openvpn
   - tmux
 
-
 - name: "Check that OPTIONAL packages are installed"
   package:
     list: "{{ item }}"
