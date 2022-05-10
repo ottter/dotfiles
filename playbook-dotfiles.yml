@@ -1,0 +1,8 @@
+---
+- name: Push dotfiles & basic config to Linux profile
+  hosts: localhost
+  connection: local
+  become: yes
+
+  roles:
+    - ansible-profile

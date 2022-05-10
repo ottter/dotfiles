@@ -1,0 +1,22 @@
+---
+- name: "Check that REQUIRED packages are installed"
+  package:
+    list: "{{ item }}"
+    state: present
+  loop:
+  - curl
+  - file
+  - git
+  - htop
+  - openvpn
+  - tmux
+
+- name: "Check that OPTIONAL packages are installed"
+  package:
+    list: "{{ item }}"
+    state: present
+  loop:
+  - hugo
+  - tree
+  - nmap
+  - tmux
