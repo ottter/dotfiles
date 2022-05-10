@@ -3,7 +3,7 @@
 DOTFILE_ARGS=$(getopt -o ab --long ansible,bash -- "$@")
 
 if [ $# -eq 0 ]; then
-  ./install.sh --bash
+  ./install.sh --ansible
   exit 0
 fi
 
@@ -12,7 +12,7 @@ eval set -- "$DOTFILE_ARGS"
 while [ : ]; do
   case "$1" in
     -a | --ansible)
-      echo "ansible"
+      sudo ansible-playbook playbook-dotfiles.yml -i hosts.ini
       exit 0
       ;;
     -b | --bash)
@@ -24,7 +24,7 @@ while [ : ]; do
       break
       ;;
     ?)
-      echo "other"
+      echo ":)"
       exit 1
       ;;
   esac
