@@ -5,3 +5,9 @@
   when: dotfile_install_packages
   tags:
     - install_packages
+
+- name: "Move dotfiles in to place"
+  import_tasks: dotfiles.yml
+  when: dotfile_move_files
+  tags:
+    - move_files

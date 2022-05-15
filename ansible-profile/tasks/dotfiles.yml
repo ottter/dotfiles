@@ -1,0 +1,10 @@
+---
+- name: Make required directories
+  file:
+    path: $HOME/testdir-df
+    state: directory
+
+- name: Copy ALIASES to home directory
+  copy:
+    src: files/dotfiles/
+    dest: ~/testdir-df/

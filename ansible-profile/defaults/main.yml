@@ -1,3 +1,6 @@
 ---
 ## Install standard packages on fresh install?
-dotfile_install_packages: true
+dotfile_install_packages: false
+
+## Move dotfiles in to place within home directory
+dotfile_move_files: true
