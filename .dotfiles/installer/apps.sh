@@ -14,7 +14,7 @@ function install {
 }
 
 # Create repo for RPM Fusion - A community maintained repo not managed by Fedora
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm > /dev/null 2>&1
 
 # Install Visual Studio Code repo and key for easier updates
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
