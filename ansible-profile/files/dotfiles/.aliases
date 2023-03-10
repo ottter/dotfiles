@@ -9,6 +9,7 @@ alias ....="cd ../../.."
 
 alias h="history | grep"
 
+alias k="kubectl"
 alias tf="terraform"
 alias pkr="packer"
 
