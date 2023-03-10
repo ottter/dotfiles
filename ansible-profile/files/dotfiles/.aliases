@@ -9,6 +9,9 @@ alias ....="cd ../../.."
 
 alias h="history | grep"
 
+alias tf="terraform"
+alias pkr="packer"
+
 alias pip='pip3'
 alias mkenv='python3 -m venv .venv'
 alias startenv='source .venv/bin/activate && which python3'

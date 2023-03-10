@@ -1,0 +1,19 @@
+---
+- name: Add HashiCorp's official GPG key
+  ansible.builtin.apt_key:
+    url: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Add HashiCorp Linux repo
+  ansible.builtin.apt_repository:
+    repo: deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main
+    state: present
+
+- name: Check that HashiCorp packages (and related) are installed
+  ansible.builtin.package:
+    list: "{{ item }}"
+    state: present
+  loop:
+  - terraform
+  - packer
+  - whois

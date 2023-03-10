@@ -4,3 +4,6 @@ dotfile_install_packages: false
 
 ## Move dotfiles in to place within home directory
 dotfile_move_files: true
+
+## Install Hashicorp suite packages the correct way
+dotfile_install_hashichorp: true

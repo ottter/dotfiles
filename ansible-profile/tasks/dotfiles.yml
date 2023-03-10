@@ -1,10 +1,10 @@
 ---
 - name: Make required directories
-  file:
+  ansible.builtin.file:
     path: $HOME/testdir-df
     state: directory
 
 - name: Copy ALIASES to home directory
-  copy:
+  ansible.builtin.copy:
     src: files/dotfiles/
     dest: ~/testdir-df/
