@@ -1,22 +1,20 @@
 ---
 - name: "Check that REQUIRED packages are installed"
   ansible.builtin.package:
-    list: "{{ item }}"
-    state: present
-  loop:
-  - curl
-  - file
-  - git
-  - htop
-  - openvpn
-  - tmux
+    name: 
+      - curl
+      - file
+      - git
+      - htop
+      - openvpn
+      - tmux
+      - tree
+    state: latest
 
 - name: "Check that OPTIONAL packages are installed"
   ansible.builtin.package:
-    list: "{{ item }}"
-    state: present
-  loop:
-  - hugo
-  - tree
-  - nmap
-  - tmux
+    name:
+      - hugo
+      - nmap
+      - whois
+    state: latest

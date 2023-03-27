@@ -2,6 +2,7 @@
 
 alias l="ls -al"
 alias ld="ls -ld */"
+alias dot="source ~/.bashrc"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -24,7 +25,7 @@ alias stopenv='deactivate'
 alias pip-user='PIP_REQUIRE_VIRTUALENV=false python3 -m pip'
 
 # Show contents of dir after action
-function cd () {
-    builtin cd "$1"
-    ls -ACF
-}
+# function cd () {
+#     builtin cd "$1"
+#     ls -ACF
+# }

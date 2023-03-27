@@ -1,9 +1,9 @@
 ---
 ## Install standard packages on fresh install?
-dotfile_install_packages: false
+dotfile_install_packages: true
 
 ## Move dotfiles in to place within home directory
 dotfile_move_files: true
 
 ## Install Hashicorp suite packages the correct way
-dotfile_install_hashichorp: true
+dotfile_install_hashicorp: false
