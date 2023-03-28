@@ -18,3 +18,27 @@
       - nmap
       - whois
     state: latest
+
+- name: Update Package Cache (apt/Ubuntu)
+  tags: always
+  apt:
+    name: "*"
+    state: latest
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+
+- name: Update Package Cache (dnf/CentOS)
+  tags: always
+  dnf:
+    name: "*"
+    state: latest
+  changed_when: false
+  when: ansible_distribution == "CentOS"
+
+- name: Update Package Cache (yum/Amazon)
+  tags: always
+  yum:
+    name: '*'
+    state: latest
+  changed_when: false
+  when: ansible_distribution == "Amazon"

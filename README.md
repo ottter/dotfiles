@@ -31,6 +31,10 @@ Re-install incase of catastrophic mistakes
     git clone -b v1.0.1 https://github.com/ottter/dotfiles.git && cd "$(basename "$_" .git)"
     ./install.sh
 
+## Useful Ansible commands
+
+Output facts: `ansible localhost -m setup`
+
 ## Sources
 
 More or less people I stole ideas from. Thanks xo

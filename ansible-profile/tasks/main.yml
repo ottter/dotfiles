@@ -12,14 +12,13 @@
   tags:
     - move_files
 
-- name: "Install HashiCorp software"
-  ansible.builtin.include_tasks: 
-    file: "{{ item }}"
+- name: "Distribution specific actions"
+  ansible.builtin.include_tasks: "distro-{{ ansible_distribution|lower }}.yml"
+  tags:
+    - distro_specific_actions
+
+- name: "Install Hashicorp software"
+  ansible.builtin.include_tasks: "hashicorp.yml"
   when: dotfile_install_hashicorp
   tags:
     - install_hashicorp
-  with_first_found:
-    - "hashicorp-{{ ansible_distribution }}.yml"
-    - "hashicorp-{{ ansible_os_family }}.yml"
-    - "hashicorp.yml"
-    skip: True

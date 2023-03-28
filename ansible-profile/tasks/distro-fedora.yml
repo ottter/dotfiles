@@ -1,0 +1,12 @@
+---
+- name: Add HashiCorp's official GPG key
+  ansible.builtin.rpm_key:
+    key: https://apt.releases.hashicorp.com/gpg
+    state: present
+
+- name: Add HashiCorp Linux repo
+  ansible.builtin.yum_repository:
+    name: HashiCorp
+    description: HashiCorp repo
+    baseurl: https://rpm.releases.hashicorp.com/fedora/hashicorp.repo
+    state: present
