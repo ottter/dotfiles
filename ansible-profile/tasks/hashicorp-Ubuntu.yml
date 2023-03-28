@@ -1,10 +1,8 @@
 ---
 - name: Add HashiCorp's official GPG key
-  ansible.builtin.get_url:
+  ansible.builtin.apt_key:
     url: https://apt.releases.hashicorp.com/gpg
-    dest: /etc/apt/trusted.gpg.d/hashicorp.asc
-    mode: '0644'
-    force: true
+    state: present
 
 - name: Add HashiCorp Linux repo
   ansible.builtin.apt_repository:
