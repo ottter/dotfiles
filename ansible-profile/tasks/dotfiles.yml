@@ -1,5 +1,5 @@
 ---
-- name: Make required directories
+- name: Make required directories in home directory
   ansible.builtin.file:
     path: $HOME/testdir-df
     state: directory

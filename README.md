@@ -1,6 +1,9 @@
 # dotfiles
 
-My dotfile repo. I'm not really sure why anyone would want to straight up install this, but it's relatively unobtrusive for standard, uncustomized installs. Of course it will overwrite what you already have so be careful.
+My dotfile repo. I'm not really sure why anyone else would want to straight up install this, but it's relatively
+ unobtrusive for standard, uncustomized installs. Of course it will overwrite what you already have so be careful.
+ **Ansible install is the most supported installation method**, but I am toying around with a bash script that will
+ also be able to handle it. They are not going to be kept aligned, and may be periodically broken.
 
 Install script will do the following:
 
@@ -17,7 +20,9 @@ Install script will do the following:
 
 ## Generate secrets dotfile
 
-I wanted to keep all secrets in a separate dotfile and I obviously don't want to put that on GitHub. This can be done before or after running `install.sh` without it being lost. This is because `install.sh` copys over files from the repo, overwriting existing and `.bashrc` runs all files in `$HOME/.dotfiles`.
+I wanted to keep all secrets in a separate dotfile and I obviously don't want to put that on GitHub. This can be done
+ before or after running `install.sh` without it being lost. This is because `install.sh` copys over files from the
+ repo, overwriting existing and `.bashrc` runs all files in `$HOME/.dotfiles`.
 
     touch $HOME/.dotfiles/.secrets
     echo "EXAMPLE_TOKEN=1234321" >> $HOME/.dotfiles/.secrets

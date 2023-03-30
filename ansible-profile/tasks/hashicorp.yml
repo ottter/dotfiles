@@ -1,5 +1,5 @@
 ---
-- name: Check that HashiCorp packages (and related) are installed
+- name: Install HashiCorp packages ( Terraform, Vagrant, etc )
   ansible.builtin.package:
     name:
       - packer
